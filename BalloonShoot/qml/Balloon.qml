@@ -17,10 +17,6 @@ EntityBase {
         fixture.restitution: 0.5
     }
 
-    MouseArea {
-        anchors.fill: sprite
-    }
-
     Component.onCompleted: {
         x = utils.generateRandomValueBetween(0, balloonScene.width - sprite.width)
         y = balloonScene.height

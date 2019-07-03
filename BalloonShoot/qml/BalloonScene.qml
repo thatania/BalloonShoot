@@ -1,7 +1,8 @@
 import QtQuick 2.0
 import Felgo 3.0
 
-Scene {
+SceneBase {
+//    id: balloonScene
     property int balloons : 0
     property int balloonMax : 10
     property int time : 10
@@ -10,11 +11,10 @@ Scene {
 
     signal menuScenePressed
 
-    opacity: 0
+    width: 480
+    height: 320
 
-    visible: opacity > 0
-
-    enabled: visible
+//    sceneAlignmentY: "top"
 
     EntityManager {
         id:entityManager
@@ -24,6 +24,7 @@ Scene {
 
     PhysicsWorld {
         z: 1
+        debugDrawVisible: false
         gravity.y: -1
     }
 
@@ -39,12 +40,12 @@ Scene {
     }
 
     Wall {
-        height: parent.height + 50
+        height: gameWindowAnchorItem.height + 50
         anchors.right: parent.left
     }
 
     Wall {
-        height: parent.height + 50
+        height: gameWindowAnchorItem.height + 50
         anchors.left: parent.right
     }
 
@@ -66,6 +67,10 @@ Scene {
         spawnBalloons.start()
         gameRunning = true
         gameTimer.start()
+        console.log("balloonScene width: " + balloonScene.width)
+        console.log("balloonScene height: " + balloonScene.height)
+        console.log("parent width: " + parent.width)
+        console.log("parent height: " + parent.height)
     }
 
     function stop() {

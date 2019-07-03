@@ -5,8 +5,8 @@ import QtQuick 2.2
 GameWindow {
     id:gameWindow
 
-    screenWidth: 640
-    screenHeight: 960
+    screenWidth: 960
+    screenHeight: 640
 
 //    onSplashScreenFinished: balloonScene.start()
     onSplashScreenFinished: balloonScene.stop()
@@ -17,6 +17,9 @@ GameWindow {
             gameWindow.state = "game"
             balloonScene.start()
         }
+        onSettingScenePressed: {
+            gameWindow.state = "settings"
+        }
     }
 
     BalloonScene {
@@ -25,6 +28,10 @@ GameWindow {
             gameWindow.state = "menu"
             balloonScene.stop()
         }
+    }
+
+    SettingScene {
+        id: settingScene
     }
 
     state: "menu"
@@ -43,6 +50,14 @@ GameWindow {
                 target: balloonScene
                 opacity: 1
             }
-    }
+    },
+    State {
+            name: "settings"
+            PropertyChanges {
+                target: settingScene
+                opacity: 1
+            }
+        }
+
     ]
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.8.2, 2019-06-22T15:13:31. -->
+<!-- Written by QtCreator 4.8.2, 2019-07-03T17:03:50. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -223,7 +223,6 @@
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
     <value type="bool" key="Analyzer.QmlProfiler.FlushEnabled">false</value>
     <value type="uint" key="Analyzer.QmlProfiler.FlushInterval">1000</value>
-    <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
     <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
@@ -261,9 +260,10 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">BalloonShoot</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/opt/felgo/Examples/Felgo/playground/balloonshoot_demo_v0.1/BalloonShoot/BalloonShoot.pro</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">BalloonShoot.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">GamePlayground</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">GamePlayground2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/opt/felgo/Examples/Felgo/playground/balloonshoot_demo_v0.2/GamePlayground/GamePlayground.pro</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">GamePlayground.pro</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -271,7 +271,7 @@
     <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/opt/felgo/Examples/Felgo/playground/balloonshoot_demo_v0.1/build-GamePlayground-V_Play_Desktop_Qt_5_10_0_GCC-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/opt/felgo/Examples/Felgo/playground/balloonshoot_demo_v0.2/build-GamePlayground-V_Play_Desktop_Qt_5_10_0_GCC-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
@@ -309,8 +309,6 @@
    <value type="QString">ProjectExplorer.Project.Target.0/ProjectExplorer.Target.DeployConfiguration.0/ProjectExplorer.BuildConfiguration.BuildStepList.0</value>
    <value type="QString">ProjectExplorer.Project.Target.0/ProjectExplorer.Target.DeployConfiguration.0/ProjectExplorer.BuildConfiguration.BuildStepList.0/ProjectExplorer.ProjectConfiguration.DefaultDisplayName</value>
    <value type="QString">ProjectExplorer.Project.Target.0/ProjectExplorer.Target.RunConfiguration.0</value>
-   <value type="QString">ProjectExplorer.Project.Target.0/ProjectExplorer.Target.RunConfiguration.0/ProjectExplorer.ProjectConfiguration.DefaultDisplayName</value>
-   <value type="QString">ProjectExplorer.Project.Target.0/ProjectExplorer.Target.RunConfiguration.0/Qt4ProjectManager.Qt4RunConfiguration.ProFile</value>
   </valuelist>
  </data>
  <data>

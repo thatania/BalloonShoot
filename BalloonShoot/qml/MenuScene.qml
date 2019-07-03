@@ -1,16 +1,12 @@
 import QtQuick 2.0
 import Felgo 3.0
 
-Scene {
+SceneBase {
 //    id: menuScene
 
     signal gameScenePressed
 
-    opacity: 0
-
-    visible: opacity > 0
-
-    enabled: visible
+    signal settingScenePressed
 
     Image {
         anchors.fill: menuScene.gameWindowAnchorItem
@@ -37,19 +33,66 @@ Scene {
             }
         }
 
-//    Rectangle {
-//        width: 150
-//        height: 50
-//        Image {
-//            id: scoreButton
-//            source: "../assets/scoreButton.png"
-//            anchors.centerIn: parent
-//        }
+        Rectangle {
+            width: 150
+            height: 50
+            Image {
+                id: continueButton
+                source: "../assets/scoreButton.png"
+                anchors.centerIn: parent
+            }
 
-//        MouseArea {
-//            anchors.fill: parent
-////            onClicked:
-//        }
-//    }
+            MouseArea {
+                anchors.fill: parent
+//                onClicked:
+            }
+        }
+
+        Rectangle {
+            width: 150
+            height: 50
+            Image {
+                id: scoreButton
+                source: "../assets/scoreButton.png"
+                anchors.centerIn: parent
+            }
+
+            MouseArea {
+                anchors.fill: parent
+//                onClicked:
+            }
+        }
+
+        Rectangle {
+            width: 150
+            height: 50
+            Image {
+                id: settingsButton
+                source: "../assets/scoreButton.png"
+                anchors.centerIn: parent
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: settingScenePressed()
+            }
+        }
+
+        Rectangle {
+            width: 150
+            height: 50
+            Image {
+                id: exitButton
+                source: "../assets/scoreButton.png"
+                anchors.centerIn: parent
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    Qt.quit()
+                }
+            }
+        }
     }
 }

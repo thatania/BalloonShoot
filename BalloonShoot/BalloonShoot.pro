@@ -57,3 +57,6 @@ DISTFILES += \
     qml/Balloon.qml \
     qml/Wall.qml \
     qml/MenuScene.qml \
+    qml/SceneBase.qml \
+    qml/SettingScene.qml \
+    qml/Slider.qml
