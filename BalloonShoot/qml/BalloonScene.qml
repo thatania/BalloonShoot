@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Felgo 3.0
-
+//lack end game
 SceneBase {
 //    id: balloonScene
     property int balloons : 0
@@ -8,11 +8,17 @@ SceneBase {
     property int time : 10
     property bool gameRunning : false
     property int score : 0
-
+    property double bgmVolume: 35
+    property double seVolume: 35
+    property int balloonGravity: 1
+    property alias breakSound: breakSound
     signal menuScenePressed
 
     width: 480
     height: 320
+
+//    width: screenWidth
+//    height: screenHeight
 
 //    sceneAlignmentY: "top"
 
@@ -25,18 +31,23 @@ SceneBase {
     PhysicsWorld {
         z: 1
         debugDrawVisible: false
-        gravity.y: -1
+        gravity.y: -balloonGravity
     }
 
     Image {
         source: "../assets/sky.jpg"
         anchors.fill: gameWindowAnchorItem
     }
+
     SoundEffect {
-
+        id: breakSound
+        volume: seVolume / 100
+        source: "../assets/snd/balloonPop.wav"
     }
-    BackgroundMusic {
 
+    BackgroundMusic {
+        volume: bgmVolume / 100
+        source: "../assets/snd/music.mp3"
     }
 
     Wall {
@@ -133,19 +144,22 @@ SceneBase {
     }
 
     Row {
-        anchors.bottom: gameWindowAnchorItem.bottom
-        z: 2
+        anchors.top: gameWindowAnchorItem.top
+//        z: 2
         Text {
             id: scoreText
-            width: 100
-            height: 40
+            width: balloonScene.width / 4
+            height: balloonScene.height / 6
             text: "score: " + balloonScene.score
+            font.pixelSize: 20
         }
 
         Text {
             id: timeText
-            height: 40
+            width: balloonScene.width / 4
+            height: balloonScene.height / 6
             text: "time: " + balloonScene.time
+            font.pixelSize: 20
         }
     }
 }

@@ -32,6 +32,9 @@ GameWindow {
 
     SettingScene {
         id: settingScene
+        onMenuScenePressed: {
+            gameWindow.state = "menu"
+        }
     }
 
     state: "menu"
