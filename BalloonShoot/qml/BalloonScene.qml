@@ -1,26 +1,42 @@
 import QtQuick 2.0
 import Felgo 3.0
+import com.mycompany 1.0
 //lack end game
 SceneBase {
 //    id: balloonScene
     property int balloons : 0
     property int balloonMax : 10
-    property int time : 10
+    property int gameTime : 20
     property bool gameRunning : false
     property int score : 0
     property double bgmVolume: 35
     property double seVolume: 35
     property int balloonGravity: 1
     property alias breakSound: breakSound
+
     signal menuScenePressed
+    Data{
+        id:data3
+        highscore: score
+    }
 
     width: 480
     height: 320
+    Timer{
+        interval: 100;running: true
+        onTriggered: data3.loadData(),datasotr.start(),console.log( data3  .highscore)
+    }
+
+    Timer{
+        id:datasotr
+        interval: 1000;repeat: true;running: true
+        onTriggered: data3.saveData(),console.log(JSON.parse(JSON.stringify(data3)).highscore),data3.highscore=score
+    }
 
 //    width: screenWidth
 //    height: screenHeight
 
-//    sceneAlignmentY: "top"
+    sceneAlignmentY: "top"
 
     EntityManager {
         id:entityManager
@@ -87,6 +103,15 @@ SceneBase {
     function stop() {
         spawnBalloons.stop()
         gameTimer.stop()
+//        gameRunning = false
+    }
+
+    function reset() {
+        entityManager.removeEntitiesByFilter(["balloon"])
+        balloons = 0
+        gameTime = 20
+
+        score = 0
     }
 
     Timer {
@@ -118,9 +143,9 @@ SceneBase {
         running: gameRunning
         repeat: true
         onTriggered: {
-            time--
+            gameTime--
 //            if(time == 0 || balloons == 0) {
-            if(time == 0) {
+            if(gameTime == 0) {
 //                running = false
                 spawnBalloons.stop()
                 gameRunning = false
@@ -158,7 +183,7 @@ SceneBase {
             id: timeText
             width: balloonScene.width / 4
             height: balloonScene.height / 6
-            text: "time: " + balloonScene.time
+            text: "time: " + balloonScene.gameTime
             font.pixelSize: 20
         }
     }

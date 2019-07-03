@@ -169,7 +169,7 @@ SceneBase {
                 id: bsSlider
                 anchors.fill: parent
                 style: settingStyle
-                minimumValue: 0
+                minimumValue: 1
                 maximumValue: 10
                 stepSize: 1
                 value: balloonScene.balloonGravity

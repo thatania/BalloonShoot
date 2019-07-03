@@ -31,7 +31,8 @@ RESOURCES += #    resources.qrc # uncomment for publishing
 
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    data.cpp
 
 android {
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
@@ -59,3 +60,6 @@ DISTFILES += \
     qml/MenuScene.qml \
     qml/SceneBase.qml \
     qml/SettingScene.qml
+
+HEADERS += \
+    data.h

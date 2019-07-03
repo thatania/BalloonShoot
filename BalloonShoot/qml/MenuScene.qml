@@ -18,7 +18,7 @@ SceneBase {
         spacing: 20
 
 
-        Rectangle {
+        Rectangle {//continue
             width: 150
             height: 50
             Image {
@@ -29,11 +29,17 @@ SceneBase {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: gameScenePressed()
+                onClicked: {
+                    if(balloonScene.gameTime != 20 && balloonScene.gameTime != 0)
+                        gameScenePressed()
+                    else {
+
+                    }
+                }
             }
         }
 
-        Rectangle {
+        Rectangle {//new play
             width: 150
             height: 50
             Image {
@@ -44,11 +50,14 @@ SceneBase {
 
             MouseArea {
                 anchors.fill: parent
-//                onClicked:
+                onClicked: {
+                    balloonScene.reset()
+                    gameScenePressed()
+                }
             }
         }
 
-        Rectangle {
+        Rectangle {//解谜
             width: 150
             height: 50
             Image {
@@ -63,7 +72,7 @@ SceneBase {
             }
         }
 
-        Rectangle {
+        Rectangle {//settings
             width: 150
             height: 50
             Image {
@@ -78,7 +87,7 @@ SceneBase {
             }
         }
 
-        Rectangle {
+        Rectangle {//exit
             width: 150
             height: 50
             Image {
