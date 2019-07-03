@@ -54,12 +54,14 @@ macx {
 }
 
 DISTFILES += \
-    qml/BalloonScene.qml \
-    qml/Balloon.qml \
-    qml/Wall.qml \
-    qml/MenuScene.qml \
-    qml/SceneBase.qml \
-    qml/SettingScene.qml
+    qml/scenes/BalloonScene.qml \
+    qml/scenes/MenuScene.qml \
+    qml/scenes/SceneBase.qml \
+    qml/scenes/SettingScene.qml \
+    qml/scenes/GameOverScreen.qml \
+    qml/entities/Balloon.qml \
+    qml/entities/Wall.qml \
+    qml/entities/TimeBalloon.qml
 
 HEADERS += \
     data.h

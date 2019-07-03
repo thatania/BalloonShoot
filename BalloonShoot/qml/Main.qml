@@ -1,6 +1,8 @@
 import Felgo 3.0
 import QtQuick 2.2
-
+import myscore 1.0
+import "scenes"
+import "entities"
 
 GameWindow {
     id:gameWindow
@@ -10,6 +12,11 @@ GameWindow {
 
 //    onSplashScreenFinished: balloonScene.start()
     onSplashScreenFinished: balloonScene.stop()
+
+    FontLoader {
+        id: standardFont
+        source: "fonts/pudding.ttf"
+    }
 
     MenuScene {
         id: menuScene
@@ -37,6 +44,21 @@ GameWindow {
         }
     }
 
+    GameOverScreen {
+        id: gameOverState
+
+        onGameScenePressed: {
+                gameOverState.hide()
+                balloonScene.reset()
+                balloonScene.start()
+        }
+
+        onMenuScenePressed: {
+                gameOverState.hide()
+                gameWindow.state = "menu"
+        }
+    }
+
     state: "menu"
 
     states: [
@@ -44,7 +66,7 @@ GameWindow {
             name: "menu"
             PropertyChanges {
                 target: menuScene
-                opacity: 1 //窗口透明度
+                opacity: 1
             }
         },
     State {
@@ -61,6 +83,5 @@ GameWindow {
                 opacity: 1
             }
         }
-
     ]
 }

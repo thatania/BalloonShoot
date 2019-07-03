@@ -3,17 +3,16 @@
 #include "data.h"
 #include <QQmlApplicationEngine>
 
-
 int main(int argc, char *argv[])
 {
 
   QApplication app(argc, argv);
 
   FelgoApplication felgo;
+  qmlRegisterType<Data>("myscore",1,0,"Data");
 
   // QQmlApplicationEngine is the preferred way to start qml projects since Qt 5.2
   // if you have older projects using Qt App wizards from previous QtCreator versions than 3.1, please change them to QQmlApplicationEngine
-   qmlRegisterType<Data>("com.mycompany",1,0,"Data");
   QQmlApplicationEngine engine;
   felgo.initialize(&engine);
 
